@@ -1,0 +1,56 @@
+thread the needle AKA 'Chunk'
+
+keep the thread in the middle of the needle hole
+
+the needle hole is a path that moves left or right
+
+prototype 1:
+
+no thread - use square like symbol - @
+no path, use pipe like symbol - | |
+
+if hit then take a life off
+if pass 15 seconds add a life
+
+include countdown timer
+include number of lives
+include username
+
+1 lvl = 15 seconds of play
+
+path example:
+
+go straight path =
+
+|1| * 4
+|1|
+|1|
+|1|  for the length of 50% of the height of the viewbox
+
+go left path =
+
+\1\ * 4
+1\1\
+12\1\
+123\1\
+
+go right path = (go left path (inverted))
+
+\1\ * 4   =     /1/
+1\1\           /1/1
+12\1\         /1/12
+123\1\       /1/123
+
+each lvl is 15 seconds
+each second produces 1 chunk *ON LVL 1*
+	- a chunk = \1\ OR |1| OR /1/
+
+each second produces 2 chunk *ON LVL 2*
+	- a chunk = \1\ OR |1| OR /1/
+
+each second produces 3 chunk *ON LVL 3*
+	- a chunk = \1\ OR |1| OR /1/
+
+each second produces 4 chunk *ON LVL 4*
+	- a chunk = \1\ OR |1| OR /1/
+
