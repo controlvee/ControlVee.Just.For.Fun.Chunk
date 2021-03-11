@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Text;
 using System.Threading;
 
@@ -29,7 +30,7 @@ namespace ControlVee.Just.For.Fun
                 default:
                     break;
             }
-            
+
             // Do until fill up height of terminal buffer
             // and then clear last line.
             FillBuffer(chunk);
@@ -38,7 +39,7 @@ namespace ControlVee.Just.For.Fun
 
         static void FillBuffer(string chunk)
         {
-            
+
 
             // Get count currently in chunk buffer.
             int chunkBufferCount = chunkBufferArray.Length;
@@ -49,7 +50,7 @@ namespace ControlVee.Just.For.Fun
 
 
             int maxBufferCount;
-            do 
+            do
             {
                 // Get height of terminal.
                 int consoleViewHeight = Console.WindowHeight;
@@ -57,7 +58,7 @@ namespace ControlVee.Just.For.Fun
                 // Set buffer max.
                 maxBufferCount = consoleViewHeight;
 
-                AddToBuffer(chunk, chunkBufferCount); 
+                AddToBuffer(chunk, chunkBufferCount);
                 Thread.Sleep(1000);
                 chunkBufferCount++;
             }
@@ -85,13 +86,13 @@ namespace ControlVee.Just.For.Fun
             int consoleViewWidth = Console.WindowWidth;
             int numberCharUntilMiddle = (int)Math.Round(consoleViewWidth / 2.0) - 3;
             char spaceChar = ' ';
-            
+
             chunk = "| |";
 
             // Add to buffer.
-            do 
-            { 
-                chunks.Append(spaceChar); 
+            do
+            {
+                chunks.Append(spaceChar);
                 numberCharUntilMiddle--;
             }
             while (numberCharUntilMiddle > 0);
@@ -105,7 +106,7 @@ namespace ControlVee.Just.For.Fun
         public static void ClearLastLine()
         {
             Console.SetCursorPosition(0, Console.CursorTop - 1);
-                        
+
             Console.Write(new string(' ', Console.BufferWidth));
 
             Console.SetCursorPosition(0, Console.CursorTop - 1);
